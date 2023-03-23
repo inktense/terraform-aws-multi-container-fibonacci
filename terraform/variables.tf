@@ -10,6 +10,18 @@ variable "project_prefix" {
   default     = "docker-multi-container"
 }
 
+variable "db_name" {
+  description = "RDS name."
+  type        = string
+  default     = "fibvalues"
+}
+
+variable "elasticache_name" {
+  description = "ElastiCache name."
+  type        = string
+  default     = "docker-multi-container-redis"
+}
+
 variable "tags" {
   description = "A map containing all the mandatory tags for the resources."
   type        = map(string)
@@ -18,4 +30,15 @@ variable "tags" {
     Initialised = "2023-03-22"
     Project     = "docker-multi-container"
   }
+}
+
+variable "pg_password" {
+  description = "Postgres password."
+  type        = string
+}
+
+variable "pg_username" {
+  description = "Postgres username."
+  type        = string
+  default     = "postgres"
 }
