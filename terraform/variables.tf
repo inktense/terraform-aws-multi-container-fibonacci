@@ -19,7 +19,7 @@ variable "db_name" {
 variable "elasticache_name" {
   description = "ElastiCache name."
   type        = string
-  default     = "docker-multi-container-redis"
+  default     = "multi-docker-redis"
 }
 
 variable "tags" {
@@ -41,4 +41,13 @@ variable "pg_username" {
   description = "Postgres username."
   type        = string
   default     = "postgres"
+}
+
+variable "env_vars" {
+  description = "values for environment variables."
+  type        = map(string)
+
+  default = {
+    REDIS_HOST = "redis"
+  }
 }
